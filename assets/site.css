@@ -751,6 +751,170 @@ footer .brand .name small { color: rgba(255,255,255,.6); }
   .aside { position: static; }
 }
 
+
+/* =========================================================
+   VECCHIONI CHIROPRACTIC — polish additions (mirrors Van Born)
+   ========================================================= */
+
+/* Condition "Read more" link inside condition cards */
+.condition-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--c-navy);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: gap .12s ease, border-color .12s ease;
+}
+.condition:hover .condition-link { border-bottom-color: var(--c-brass); }
+.condition-link:hover { gap: 10px; }
+.condition-link span[aria-hidden] { transition: transform .12s ease; display: inline-block; }
+.condition-link:hover span[aria-hidden] { transform: translateX(2px); }
+
+/* Portrait badge — sits on top-left of the doctor photo, a calm cream pill */
+.portrait { position: relative; }
+.portrait .portrait-badge {
+  position: absolute; top: 18px; left: 18px;
+  background: rgba(244, 238, 224, 0.96);
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: var(--sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--c-navy);
+  box-shadow: 0 6px 18px -8px rgba(14,24,40,.18);
+  display: none;
+}
+@media (min-width: 720px) {
+  .portrait .portrait-badge { display: inline-block; }
+}
+.portrait .portrait-badge .badge-line-1 { display: inline; color: var(--c-brass); }
+.portrait .portrait-badge .badge-line-2 { display: inline; color: var(--c-navy); margin-left: 4px; }
+
+/* First-visit section — between hero and conditions */
+.first-visit { padding: 80px 0; background: var(--c-cream-2); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.first-visit .section-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--c-brass);
+  margin: 0 0 14px;
+}
+.first-visit h2 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(28px, 3.6vw, 38px);
+  margin: 0 0 14px;
+  letter-spacing: -.005em;
+}
+.first-visit h2 em { font-style: italic; color: var(--c-navy); }
+.first-visit .lede { font-size: 17px; color: var(--c-ink-soft); margin: 0 0 32px; max-width: 40em; }
+.first-visit-steps {
+  display: grid; gap: 22px;
+  grid-template-columns: 1fr;
+  list-style: none; padding: 0; margin: 0 0 28px;
+}
+@media (min-width: 720px) { .first-visit-steps { grid-template-columns: repeat(3, 1fr); gap: 26px; } }
+.first-visit-steps li {
+  background: #fff; border: 1px solid var(--c-line); border-radius: var(--r);
+  padding: 22px 22px 24px;
+}
+.first-visit-steps li .step-num {
+  display: inline-block;
+  font-family: var(--serif); font-weight: 600; font-size: 24px;
+  color: var(--c-brass);
+  margin-bottom: 4px;
+}
+.first-visit-steps li h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif); font-size: 19px; font-weight: 600;
+  color: var(--c-navy);
+}
+.first-visit-steps li p { margin: 0; font-size: 14.5px; color: var(--c-ink-soft); line-height: 1.5; }
+.first-visit-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.first-visit-cta a.btn { font-size: 14px; }
+.first-visit-cta .phone-link {
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: var(--c-navy); text-decoration: none;
+  border-bottom: 2px solid var(--c-brass);
+  padding-bottom: 2px;
+}
+
+/* Trust strip */
+.trust { padding: 64px 0; background: var(--c-cream); border-top: 1px solid var(--c-line); }
+.trust .section-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--c-brass); margin: 0 0 12px;
+}
+.trust h2 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 0 0 28px;
+}
+.trust-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 720px) { .trust-grid { grid-template-columns: 1fr 1fr; gap: 18px; } }
+@media (min-width: 980px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+.trust-card {
+  background: #fff; border: 1px solid var(--c-line); border-radius: var(--r);
+  padding: 20px 18px;
+}
+.trust-card .ico {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--c-cream-2);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--c-navy); margin-bottom: 12px;
+}
+.trust-card h3 { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--c-navy); margin: 0 0 6px; }
+.trust-card p { font-size: 13.5px; color: var(--c-ink-soft); margin: 0; line-height: 1.45; }
+
+/* Privacy strip — small, just under footer-top */
+.privacy-strip {
+  background: var(--c-cream);
+  border-top: 1px solid var(--c-line);
+  padding: 22px 0;
+  font-size: 12.5px;
+  color: var(--c-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+.privacy-strip strong { color: var(--c-ink); font-weight: 700; }
+.privacy-strip a { color: var(--c-navy); }
+
+/* Open/closed status pill */
+.status-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--c-cream-2);
+  color: var(--c-ink);
+  border: 1px solid var(--c-line);
+  margin: 4px 0 14px;
+}
+.status-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-muted); }
+.status-pill.is-open { background: rgba(40,140,80,.10); border-color: rgba(40,140,80,.30); color: #1f6f3f; }
+.status-pill.is-open .dot { background: #1f6f3f; box-shadow: 0 0 0 0 rgba(40,160,90,.55); animation: pill-pulse 2s ease-out infinite; }
+.status-pill.is-closed { background: rgba(160,80,60,.08); border-color: rgba(160,80,60,.25); color: #8c3f2a; }
+.status-pill.is-closed .dot { background: #8c3f2a; }
+@keyframes pill-pulse { 0% { box-shadow: 0 0 0 0 rgba(40,160,90,.55); } 100% { box-shadow: 0 0 0 10px rgba(40,160,90,0); } }
+
+/* Library-card-list for sticky bottom of homepage (related reading) */
+.related-reading { padding: 56px 0 72px; }
+.related-reading .lib-grid { margin-top: 24px; }
+.related-reading h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 28px); margin: 0 0 4px; }
+
+/* Hours 'today' highlight */
+.hours-row.today { background: rgba(168,130,68,.08); border-radius: 4px; padding: 12px 10px; }
+
+/* Mobile polish for new sections */
+@media (max-width: 539px) {
+  .first-visit { padding: 56px 0; }
+  .first-visit-steps li { padding: 18px 18px 20px; }
+  .trust { padding: 48px 0; }
+  .portrait .portrait-badge { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; animation: none; }
   html { scroll-behavior: auto; }

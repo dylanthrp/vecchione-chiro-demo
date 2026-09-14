@@ -1,6 +1,6 @@
-# Vecchione Chiropractic — Portfolio Demo
+# Vecchioni Chiropractic — Portfolio Demo
 
-**Independent, unsolicited design concept. Not the official clinic website. Not affiliated with Vecchione Chiropractic in any way.**
+**Independent, unsolicited design concept. Not the official clinic website. Not affiliated with Vecchioni Chiropractic in any way.**
 
 Live site: https://vecchionichiropractic.com/  
 Demo purpose: portfolio piece for Dylan Thorpe, demonstrating a multi-page chiropractic site with sharpened headshot, navy/cream/brass palette, mobile-first header, and full accessibility checks.
@@ -59,3 +59,18 @@ Runs across 320 / 390 / 768 / 1440 px viewports and checks:
 All clinical descriptions and copy were derived from the public-facing content at vecchionichiropractic.com, plus Dr. Vecchioni's stated credentials (Sherman College D.C., F.A.S.B.E. fellowship). No clinical promises are made; the site does not collect patient information.
 
 The portrait is a public-facing image of Dr. William D. Vecchioni, sharpened via Real-ESRGAN for the hero card.
+
+## Polish features (portrait refresh + Van Born standards)
+
+- **Sharpened portrait** — the prior AI-upscale had visible artifacts; replaced with a clean, in-focus source (1254×1254) and regenerated the 200×200 thumb.
+- **First-visit section** — three numbered steps (paperwork, focused assessment, plan & next steps) between the hero and the statement.
+- **Portrait badge** — "40+ years · Sherman D.C." pill sits on the photo at ≥720px widths.
+- **Condition links** — five condition cards (Neck, Mid back, Low back, Headaches, Auto injuries) now link into the relevant wellness-library article.
+- **Related reading** — a 4-card "From the wellness library" strip on the homepage.
+- **Trust cards** — 4 cards summarizing what the practice offers (techniques, credentials, family care, affordability).
+- **Open/closed status pill** — JS-driven, live, uses the same hours table; today's row is highlighted on home and patient-resources.
+- **Privacy strip** — visible on every page, explains no data collection / no third-party trackers, links to the official site.
+- **Vecchioni spelling fixed throughout** (the repo name remains `vecchione-chiro-demo` for URL stability).
+- **Real phone links** — `tel:+13132771100` everywhere; masked placeholders removed.
+- **Honest founding language** — "Since 1985" replaced with "40+ years in Dearborn Heights" / "mid-1980s" to match the live source.
+
