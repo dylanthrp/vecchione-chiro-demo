@@ -68,18 +68,51 @@
       <p class="eyebrow">Office hours</p>
       <h2>Call during <em>open hours.</em></h2>
       <div class="hours-card">
-        <span class="status-pill" data-status-pill aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="label">Checking hours…</span></span>
-        <div class="hours-row"><span class="day">Monday</span><span class="time">10a–1p · 3p–7p</span></div>
-        <div class="hours-row"><span class="day">Tuesday</span><span class="time">10a–1p · 3p–7p</span></div>
-        <div class="hours-row"><span class="day">Wednesday</span><span class="time">10a–1p</span></div>
-        <div class="hours-row closed"><span class="day">Thursday</span><span class="time">10a–1p · 3p–7p</span></div>
-        <div class="hours-row closed"><span class="day">Friday</span><span class="time">Closed</span></div>
-        <div class="hours-row closed"><span class="day">Saturday</span><span class="time">Closed</span></div>
-        <div class="hours-row closed"><span class="day">Sunday</span><span class="time">Closed</span></div>
+        <div class="hours-head">
+          <h3>Office hours</h3>
+          <span class="status-pill" data-status-pill aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="label">Checking hours…</span></span>
+        </div>
+
+        <table class="hours-table" aria-label="Weekly office hours">
+          <thead>
+            <tr><th>Day</th><th class="time-col">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Monday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Tuesday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Wednesday</td><td class="time-cell">10a–1p</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Thursday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
+            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Friday</td><td class="time-cell">Closed</td></tr>
+            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Saturday</td><td class="time-cell">Closed</td></tr>
+            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Sunday</td><td class="time-cell">Closed</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.4 7 11.7 7.3 12 .4.3 1 .3 1.4 0C13 21.7 20 15.4 20 10a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          </span>
+          <div>
+            <p class="label">Address</p>
+            <p class="value">4218 Pelham St</p>
+            <p class="sub">Dearborn Heights, MI 48125</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          <div>
+            <p class="label">Phone</p>
+            <p class="value"><a href="tel:+13132771100">(313) 277-1100</a></p>
+            <p class="sub">Call during open hours</p>
+          </div>
+        </div>
       </div>
 
       <div class="affordability" style="margin-top: 28px;">
-        <strong>High deductible? Copay? No insurance? No problem.</strong>
+        <p class="affordability-callout"><span>Quality health care at a price you can afford</span><span>High deductible or copay? No insurance? No problem!</span><span>Contact us for affordable wellness plans!</span></p><strong>High deductible? Copay? No insurance? No problem.</strong>
         <p>Contact us for affordable wellness plans — quality care at a price you can afford.</p>
         <a href="tel:+13132771100">Call (313) 277-1100 →</a>
       </div>
@@ -88,11 +121,27 @@
     <div>
       <p class="eyebrow">Visit us</p>
       <div class="hours-card" style="margin-bottom: 28px;">
-        <h3>Address</h3>
-        <p style="margin: 0; font-size: 17px; color: var(--c-navy); font-weight: 700;">4218 Pelham</p>
-        <p style="margin: 0 0 18px; font-size: 14.5px; color: var(--c-ink-soft);">Dearborn Heights, MI 48125</p>
-        <p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--c-muted);">Phone</p>
-        <p style="margin: 0;"><a href="tel:+13132771100" style="font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--c-navy);">(313) 277-1100</a></p>
+        <div class="info-row" style="margin-top: 0; border-top: 0; padding-top: 0;">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a8 8 0 0 0-8 8c0 5.4 7 11.7 7.3 12 .4.3 1 .3 1.4 0C13 21.7 20 15.4 20 10a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          </span>
+          <div>
+            <p class="label">Address</p>
+            <p class="value">4218 Pelham St</p>
+            <p class="sub">Dearborn Heights, MI 48125</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          <div>
+            <p class="label">Phone</p>
+            <p class="value"><a href="tel:+13132771100">(313) 277-1100</a></p>
+            <p class="sub">Call during open hours</p>
+          </div>
+        </div>
       </div>
 
       <p class="eyebrow">Before your first visit</p>
@@ -183,8 +232,8 @@
   pill.classList.add(open ? 'is-open' : 'is-closed');
   pill.querySelector('.label').textContent = open ? 'Open now · closes today' : (HOURS[day] ? 'Closed now' : 'Closed today');
   var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  document.querySelectorAll('.hours-row').forEach(function(r){
-    var d = r.querySelector('.day');
+  document.querySelectorAll('.hours-table tbody tr').forEach(function(r){
+    var d = r.querySelector('.day-cell');
     if (d && d.textContent.trim().startsWith(days[day])) r.classList.add('today');
   });
 })();

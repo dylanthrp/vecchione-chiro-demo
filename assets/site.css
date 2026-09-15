@@ -907,6 +907,116 @@ footer .brand .name small { color: rgba(255,255,255,.6); }
 /* Hours 'today' highlight */
 .hours-row.today { background: rgba(168,130,68,.08); border-radius: 4px; padding: 12px 10px; }
 
+
+/* Affordability three-line callout (verbatim from the original site) */
+.affordability-callout {
+  display: block;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  background: var(--c-cream-2);
+  border-left: 3px solid var(--c-brass);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-cream);
+  line-height: 1.55;
+}
+.affordability-callout span {
+  display: block;
+  color: rgba(255,255,255,.92);
+}
+.affordability-callout span:first-child { color: var(--c-brass-light); font-size: 12.5px; }
+.affordability strong { display: block; font-family: var(--serif); font-size: 22px; margin-bottom: 6px; }
+
+/* Hours card — redesigned for clarity */
+.hours-card { padding: 28px 28px 30px; }
+.hours-card .hours-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.hours-card .hours-head h3 { margin: 0; }
+.hours-table {
+  width: 100%; border-collapse: collapse; margin: 0 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+.hours-table thead th {
+  text-align: left;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--c-muted);
+  padding: 0 0 8px;
+  border-bottom: 1px solid var(--c-line);
+}
+.hours-table thead th.time-col { text-align: right; }
+.hours-table tbody td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-line);
+  vertical-align: middle;
+}
+.hours-table tbody tr:last-child td { border-bottom: 0; }
+.hours-table tbody tr.today td { background: rgba(168,130,68,.10); }
+.hours-table tbody tr.today td:first-child {
+  position: relative;
+  padding-left: 14px;
+}
+.hours-table tbody tr.today td:first-child::before {
+  content: ""; position: absolute; left: 0; top: 14px; bottom: 14px;
+  width: 3px; background: var(--c-brass); border-radius: 2px;
+}
+.hours-table td.day-cell {
+  font-weight: 700; font-size: 14.5px; color: var(--c-ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.hours-table td.day-cell .day-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--c-line); flex: 0 0 auto;
+}
+.hours-table tr.today td.day-cell .day-dot { background: var(--c-brass); }
+.hours-table td.time-cell {
+  text-align: right;
+  font-size: 14px; color: var(--c-ink-soft);
+  white-space: nowrap;
+}
+.hours-table tr.closed-row td.time-cell { color: var(--c-muted); font-style: italic; }
+.hours-table tr.closed-row td.day-cell .day-dot { background: rgba(140,80,60,.35); }
+
+/* Address / phone rows in the hours card */
+.hours-card .info-row {
+  display: flex; gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--c-line);
+}
+.hours-card .info-row:first-of-type { margin-top: 24px; }
+.hours-card .info-row .ico {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--c-cream-2);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--c-navy);
+  flex: 0 0 36px;
+}
+.hours-card .info-row .label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 0 0 4px;
+}
+.hours-card .info-row .value { font-size: 15.5px; font-weight: 600; color: var(--c-ink); margin: 0; }
+.hours-card .info-row .value a { color: var(--c-navy); text-decoration: none; }
+.hours-card .info-row .value a:hover { text-decoration: underline; }
+.hours-card .info-row .sub { font-size: 13px; color: var(--c-muted); margin: 2px 0 0; }
+
+@media (max-width: 539px) {
+  .hours-card { padding: 22px 18px 24px; }
+  .hours-table td.day-cell { font-size: 13.5px; }
+  .hours-table td.time-cell { font-size: 13px; }
+  .hours-card .info-row { gap: 12px; }
+  .hours-card .info-row .ico { width: 32px; height: 32px; flex-basis: 32px; }
+}
+
 /* Mobile polish for new sections */
 @media (max-width: 539px) {
   .first-visit { padding: 56px 0; }
