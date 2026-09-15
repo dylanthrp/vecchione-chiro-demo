@@ -1017,6 +1017,50 @@ footer .brand .name small { color: rgba(255,255,255,.6); }
   .hours-card .info-row .ico { width: 32px; height: 32px; flex-basis: 32px; }
 }
 
+
+/* Saturday half-day note inside the time cell */
+.hours-table td.time-cell .time-note {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--c-brass);
+  margin-left: 4px;
+}
+
+/* Hours card notes: holiday note + source link */
+.hours-card .hours-note {
+  margin: 16px 0 6px;
+  padding: 12px 14px;
+  background: rgba(168,130,68,.08);
+  border-left: 3px solid var(--c-brass);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+.hours-card .hours-source {
+  margin: 0 0 4px;
+  font-size: 12.5px;
+  color: var(--c-muted);
+}
+.hours-card .hours-source a {
+  color: var(--c-navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.hours-card .hours-source a:hover { color: var(--c-brass); }
+
+/* Closed day rows: rust accent for the day-cell text + time-cell */
+.hours-table tr.closed-row td.day-cell { color: #8c3f2a; }
+.hours-table tr.closed-row td.time-cell { color: #8c3f2a; font-style: italic; font-weight: 700; }
+.hours-table tr.closed-row td.day-cell .day-dot { background: rgba(140,80,60,.6); }
+
+@media (max-width: 539px) {
+  .hours-table td.time-cell .time-note { display: block; margin-left: 0; margin-top: 2px; }
+  .hours-card .hours-note { font-size: 12px; }
+}
+
 /* Mobile polish for new sections */
 @media (max-width: 539px) {
   .first-visit { padding: 56px 0; }

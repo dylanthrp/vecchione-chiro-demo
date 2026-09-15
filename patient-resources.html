@@ -78,15 +78,18 @@
             <tr><th>Day</th><th class="time-col">Hours</th></tr>
           </thead>
           <tbody>
-            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Monday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
-            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Tuesday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
-            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Wednesday</td><td class="time-cell">10a–1p</td></tr>
-            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Thursday</td><td class="time-cell">10a–1p · 3p–7p</td></tr>
-            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Friday</td><td class="time-cell">Closed</td></tr>
-            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Saturday</td><td class="time-cell">Closed</td></tr>
             <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Sunday</td><td class="time-cell">Closed</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Monday</td><td class="time-cell">9:00 AM – 6:00 PM</td></tr>
+            <tr class="closed-row"><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Tuesday</td><td class="time-cell">Closed</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Wednesday</td><td class="time-cell">9:00 AM – 6:00 PM</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Thursday</td><td class="time-cell">9:00 AM – 6:00 PM</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Friday</td><td class="time-cell">9:00 AM – 6:00 PM</td></tr>
+            <tr><td class="day-cell"><span class="day-dot" aria-hidden="true"></span>Saturday</td><td class="time-cell">9:00 AM – 12:00 PM <span class="time-note">(1st, 3rd, 5th)</span></td></tr>
           </tbody>
         </table>
+
+        <p class="hours-note">Saturday hours apply only to the 1st, 3rd and 5th Saturdays of the month, when applicable. Closed Sundays and Tuesdays. Local clinic time (Eastern). Call to confirm holiday hours and availability.</p>
+        <p class="hours-source">Hours source: <a href="https://vecchionichiropractic.com/" rel="noopener">official clinic homepage</a></p>
 
         <div class="info-row">
           <span class="ico" aria-hidden="true">
@@ -223,7 +226,7 @@
 (function(){
   var pill = document.querySelector('[data-status-pill]');
   if (!pill) return;
-  var HOURS = {1:[[10,13],[15,19]], 2:[[10,13],[15,19]], 3:[[10,13]], 4:[[10,13],[15,19]]};
+  var HOURS = {1:[[9,18]], 3:[[9,18]], 4:[[9,18]], 5:[[9,18]], 6:[[9,12]]};
   var now = new Date();
   var day = now.getDay();
   var t = now.getHours() + now.getMinutes()/60;
