@@ -1,76 +1,41 @@
-# Vecchioni Chiropractic — Portfolio Demo
+# Vecchioni Chiropractic — clinic presentation preview
 
-**Independent, unsolicited design concept. Not the official clinic website. Not affiliated with Vecchioni Chiropractic in any way.**
+## [View the design preview](https://dylanthrp.github.io/vecchione-chiro-demo/)
 
-Live site: https://vecchionichiropractic.com/  
-Demo purpose: portfolio piece for Dylan Thorpe, demonstrating a multi-page chiropractic site with sharpened headshot, navy/cream/brass palette, mobile-first header, and full accessibility checks.
+**Independent presentation concept, not the official clinic website.** Not affiliated with the clinic. Logo, branding and draft copy require clinic approval before any official launch.
 
-## Pages
+**Official clinic website:** https://vecchionichiropractic.com/
 
-| File | Purpose |
-|---|---|
-| `index.html` | Home — hero, statement of purpose, techniques, conditions, hours |
-| `meet-the-doctor.html` | About Dr. Vecchioni with portrait + credentials grid |
-| `services.html` | Five techniques + A.S.B. fellowship, full descriptions |
-| `library-index.html` | Wellness library landing page (8 topic cards) |
-| `library-back.html`, `library-neck.html`, `library-sciatica.html`, `library-headaches.html`, `library-carpal.html`, `library-joints.html`, `library-foot.html`, `library-auto.html` | Patient-education articles |
-| `patient-resources.html` | Office hours, address, first-visit prep, affordability callout |
+## Scope
 
-## Design
+14 static HTML pages share `assets/site.css`. The navy/cream/brass palette, local doctor portrait and simple phone/hours/directions navigation are retained. Native patient FAQs work without JavaScript. `assets/site.js` progressively enhances the eight-topic wellness library with local search, category filtering, result counts and reset. No booking simulation, chat, patient forms, portal, reviews, analytics or tracking scripts.
 
-- **Palette:** navy (#1a2942) + cream (#f4eee0) + brass (#a88244)
-- **Type:** Cormorant Garamond serif for headlines, Inter sans for UI
-- **Header:** sticky cream header with logo + 3 icon pills (Call/Appt/Map)
-- **Mobile:** brand row stacks above a 3-up action grid; navy topnav flattens to a single-row pill nav
-- **Disclosure:** every page shows the "Unsolicited portfolio demo" banner linking to the official site
+Search terms stay in the page, are not sent or saved, and never enter the URL. GitHub Pages or another hosting provider may retain standard request logs. Clicking an external link leaves this preview and is subject to that site's policies. This is not a HIPAA compliance claim.
 
-## Files
-
-```
-vecchione-chiro-demo/
-├── assets/
-│   ├── site.css            ← shared stylesheet (21KB)
-│   ├── vecchioni-final.jpg ← doctor portrait (hero)
-│   ├── vecchioni-thumb.jpg ← 200×200 thumbnail
-│   └── wv-monogram.svg     ← "WV" logo mark
-├── tests/
-│   └── audit-browser.cjs   ← Playwright accessibility/responsive audit
-├── [13 HTML pages]
-└── README.md
-```
-
-## Verify
+## Local verification
 
 ```bash
 cd "C:/Users/dylan/Documents/vecchione-chiro-demo"
+node tests/content-regression.cjs
+node tests/interaction-regression.cjs
 node tests/audit-browser.cjs
 ```
 
-Runs across 320 / 390 / 768 / 1440 px viewports and checks:
-- Skip link + Enter activates main
-- All images decode (no broken refs)
-- No horizontal overflow at any width
-- No external (third-party) requests
-- No console errors
-- Topnav appears on every page with all five destinations
+Browser tests use the existing Playwright installation at `C:/Users/dylan/Downloads/study-spot/node_modules/playwright` (read-only; no changes made there). Override with `PLAYWRIGHT_MODULE` to use a different installed module. Chromium must be installed for Playwright. No build step or server is required: tests load local HTML.
 
-## Content attribution
+The responsive audit covers every page at 320, 390, 768 and 1440 pixels: overflow, landmarks, headings, skip links, images, same-site links and anchors, navigation, script errors and unsolicited external requests. Interaction tests cover FAQ keyboard controls and library search/filter/reset/empty states, including a JavaScript-disabled fallback. Screenshots are regenerated as ignored `tests/audit-*.png` files. These are targeted checks, not a WCAG certification or cross-browser guarantee.
 
-All clinical descriptions and copy were derived from the public-facing content at vecchionichiropractic.com, plus Dr. Vecchioni's stated credentials (Sherman College D.C., F.A.S.B.E. fellowship). No clinical promises are made; the site does not collect patient information.
+## Content and approval notes
 
-The portrait is a public-facing image of Dr. William D. Vecchioni, sharpened via Real-ESRGAN for the hero card.
+- The [official homepage](https://vecchionichiropractic.com/) identifies Sherman College, the Applied Spinal Biomechanics fellowship, techniques, 40 years of service and wellness plans. Its copy is the source for those biographical details, not independent credential verification.
+- Hours match the official website's full Contact Us section: Monday/Tuesday/Thursday 10:00 AM–1:00 PM and 3:00 PM–7:00 PM; Wednesday 10:00 AM–1:00 PM and 3:00 PM–6:00 PM, Eastern. Friday/weekend hours are not listed, so visitors are asked to call. The earlier preview schedule conflicted with that source and was removed, along with unreliable live open/closed badges. Confirm schedules and holiday exceptions directly with the clinic before an official launch.
+- Educational articles and first-visit guidance are draft copy, not authored or approved by the doctor. Unsupported technique-to-condition promises were removed; clinical review, citations and clinic workflow confirmation remain required before launch.
+- The public-facing doctor portrait is retained. Image and branding permissions still need approval. Fonts use local system fallbacks; no external font service is called.
+- Every page retains `noindex, nofollow`. GitHub Pages hosts a presentation preview, not an official clinic launch.
 
-## Polish features (portrait refresh + Van Born standards)
+## Design references
 
-- **Sharpened portrait** — the prior AI-upscale had visible artifacts; replaced with a clean, in-focus source (1254×1254) and regenerated the 200×200 thumb.
-- **First-visit section** — three numbered steps (paperwork, focused assessment, plan & next steps) between the hero and the statement.
-- **Portrait badge** — "40+ years · Sherman D.C." pill sits on the photo at ≥720px widths.
-- **Condition links** — five condition cards (Neck, Mid back, Low back, Headaches, Auto injuries) now link into the relevant wellness-library article.
-- **Related reading** — a 4-card "From the wellness library" strip on the homepage.
-- **Trust cards** — 4 cards summarizing what the practice offers (techniques, credentials, family care, affordability).
-- **Open/closed status pill** — JS-driven, live, uses the same hours table; today's row is highlighted on home and patient-resources.
-- **Privacy strip** — visible on every page, explains no data collection / no third-party trackers, links to the official site.
-- **Vecchioni spelling fixed throughout** (the repo name remains `vecchione-chiro-demo` for URL stability).
-- **Real phone links** — `tel:+13132771100` everywhere; masked placeholders removed.
-- **Honest founding language** — "Since 1985" replaced with "40+ years in Dearborn Heights" / "mid-1980s" to match the live source.
+Patient-first navigation, readable mobile layouts, provider context and direct contact paths informed this pass. Vendor suggestions that would imply an actual clinical integration were deliberately not simulated.
 
+- https://getdeardoc.com/blog/medical-practice-website-design
+- https://www.officite.com/9-doctor-website-design-examples-that-attract-patients/
